@@ -356,7 +356,11 @@ def get_LesionWiseResults(pred_file, gt_file, challenge_name, output=None):
         # print(metric_df)
         metric_df['hd95_lesionwise'] = metric_df['hd95_lesionwise'].replace(np.inf, 374)
 
+
+        # final_lesionwise_metrics_df = pd.concat([final_lesionwise_metrics_df,metric_df])
         final_lesionwise_metrics_df = final_lesionwise_metrics_df.append(metric_df)
+
+        
         metric_df_thresh = metric_df[metric_df['gt_lesion_vol'] > lesion_volume_thresh]
         
         try:
