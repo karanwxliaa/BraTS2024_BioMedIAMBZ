@@ -42,7 +42,7 @@ class BaseTrainerModule(pl.LightningModule):
         logits = self.forward(data)
         
         loss = self.criterion(logits, target)
-        
+
         self.log("train_loss", loss.item(), on_step=True, on_epoch=True, prog_bar=True, logger=True)
         
         return loss
