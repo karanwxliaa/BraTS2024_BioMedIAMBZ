@@ -6,7 +6,7 @@
 
 ``` bash
 conda create -n brats python=3.8
-pip install -r requirements.txt
+cat requirements.txt | xargs -n 1 pip install
 ```
 
 ### Data Preprocessing
